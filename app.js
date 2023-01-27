@@ -1,3 +1,5 @@
+const connectdb = require('./config')
+connectdb()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +8,7 @@ var logger = require('morgan');
 
 var userouter = require('./routes/user');
 var companyrouter = require('./routes/company');
+// const connectdb = require('./config');
 
 var app = express();
 
