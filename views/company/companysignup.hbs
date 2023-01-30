@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h1>signup</h1>
+        <form action="/company/signup" method="post">
+            <table>
+                <tr>
+                    <th> <label for="">employer name</label></th>
+                    <th><input type="text" name="employerName" id=""></th><br><br>
+                </tr>
+                <tr>
+                    <th><label for="">email</label></th>
+                    <th> <input type="email" name="email" id=""><br><br></th>
+                </tr>
+                <tr>
+                    <th><label for="">phone number</label></th>
+                    <th><input type="number" name="phoneNumber" id=""><br><br></th>
+                </tr>
+                <tr>
+                    <th><label for="">password</label></th>
+                    <th> <input type="password" name="password" id=""><br><br></th>
+                </tr>
+                <tr>
+                    <th><label for="">employer type</label></th>
+                    <select name="companytype" class="form-select" aria-label="Default select example">
+                        <option selected>select company type</option>
+                        <option value="software">software</option>
+                        <option value="architecture">architecture</option>
+                        <option value="finance">finance</option>
+                        <option value="marketing">marketing</option>
+                    </select>
+                </tr>
+            </table>
+
+
+            <button>submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

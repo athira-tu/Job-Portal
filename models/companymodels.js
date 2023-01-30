@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
-
-const userSchemas = new mongoose.Schema({
-    userName: {
+const companySchemas = new mongoose.Schema({
+    employerName: {
         type: String,
         maxLength: 30,
         required: true
@@ -19,10 +18,10 @@ const userSchemas = new mongoose.Schema({
         type: String,
         required: true
     },
-    workstatus: {
+    companytype: {
         type: String,
         required: true
     }
 })
-const usermodel = mongoose.model('user', userSchemas);
-module.exports = usermodel
+const companymodels = mongoose.model('companysignup', companySchemas);
+module.exports = companymodels

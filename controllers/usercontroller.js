@@ -1,5 +1,6 @@
 const usermodel = require("../models/usermodel");
 const taskmodel = require("../models/usermodel")
+const bcrypt = require('bcrypt')
 const renderindexpage = function (req, res, next) {
     res.render('index', { title: 'express' });
 }
@@ -15,8 +16,9 @@ const rendersignup = function (req, res, next) {
 }
 const dosignup = async function (req, res, next) {
     try {
+        req.body.password = await bcrypt.hash(req.body.password, 10)
         let data = await usermodel.create(req.body)
-        res.send("success")
+        res.redirect("/login")
     } catch (error) {
         res.send("error")
     }
