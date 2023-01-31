@@ -1,5 +1,5 @@
 var express = require('express');
-const { renderindexpage, renderlogin, renderhome, rendersignup, dosignup } = require('../controllers/usercontroller');
+const { renderindexpage, renderlogin, renderhome, rendersignup, dosignup, doLogin } = require('../controllers/usercontroller');
 var router = express.Router();
 
 /* GET home page. */
@@ -8,6 +8,7 @@ router.get('/login', renderlogin);
 router.get('/home', renderhome)
 router.get('/signup', rendersignup)
 router.post('/signup', dosignup)
+router.post('/login', doLogin)
 
 
 

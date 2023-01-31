@@ -1,4 +1,9 @@
 <link rel="stylesheet" href="stylesheets/login.css">
 <h1>login</h1>
-<p>hello {{ name}}</p>
-<p>id:{{data.id}} <br> value:{{data.value}}</p>
+<form action="/login" method="post">
+    <label for="">email</label>
+    <input type="email" name="email" required><br>
+    <label for="">password</label>
+    <input type="password" name="password" required><br>
+    <button>login</button>
+</form>
