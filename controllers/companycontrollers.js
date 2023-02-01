@@ -1,15 +1,41 @@
 const companymodels = require("../models/companymodels")
 const bcrypt = require('bcrypt')
+
 const rendersignup = function (req, res, next) {
     res.render('company/companysignup')
+}
+const renderhome = function (req, res, next) {
+    res.render('company/companyhome')
+
 }
 const dosignup = async function (req, res, next) {
     try {
         req.body.password = await bcrypt.hash(req.body.password, 10)
         let data = await companymodels.create(req.body)
-        res.send("success")
+        res.redirect('/company/login')
     } catch (error) {
         res.send(error)
     }
 }
-module.exports = { rendersignup, dosignup }
+const renderlogin = function (req, res, next) {
+    res.render('company/companylogin')
+}
+
+const doLogin = async function (req, res, next) {
+    const employer = await companymodels.findOne({ email: req.body.email })
+    if (employer) {
+        const existEmployer = await bcrypt.compare(req.body.password, employer.password)
+        if (existEmployer) {
+            req.session.employer = employer
+            res.redirect('/company/home')
+        } else {
+            res.redirect("/company/login")
+        }
+
+
+    } else {
+        res.redirect("/company/companylogin")
+    }
+}
+
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome }

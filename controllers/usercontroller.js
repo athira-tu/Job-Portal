@@ -16,7 +16,13 @@ const renderhome = function (req, res, next) {
     }
 }
 const rendersignup = function (req, res, next) {
-    res.render('user/signup')
+    if (req.session.alertMsg) {
+        let { alertMsg } = req.session
+
+        res.render('user/signup', { alertMsg })
+    } else {
+        res.render('user/signup')
+    }
 }
 const dosignup = async function (req, res, next) {
     try {
@@ -24,7 +30,9 @@ const dosignup = async function (req, res, next) {
         let data = await usermodel.create(req.body)
         res.redirect("/login")
     } catch (error) {
-        res.send(error)
+        console.log("error");
+        req.session.alertMsg = "signup failed retry"
+        res.redirect('/signup')
     }
 }
 const doLogin = async function (req, res, next) {
