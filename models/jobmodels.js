@@ -40,8 +40,22 @@ const jobSchemas = new mongoose.Schema({
     },
     status: {
         type: String,
+        required: true,
+        default: "posted"
+    },
+    companyid: {
+        type: String,
         required: true
     },
+    companyname: {
+        type: String,
+        required: true
+    },
+    dateposted: {
+        type: String,
+        required: true
+    }
+
 })
 const jobmodels = mongoose.model('job', jobSchemas);
 module.exports = jobmodels

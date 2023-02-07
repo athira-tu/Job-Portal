@@ -1,6 +1,6 @@
 var express = require('express');
 const { rendersignup, dosignup, renderlogin, renderhome, doLogin } = require('../controllers/companycontrollers');
-const { renderjob, doaddjob } = require('../controllers/jobcontrollers');
+const { renderjob, doaddjob, companyjobview } = require('../controllers/jobcontrollers');
 
 var router = express.Router();
 
@@ -11,6 +11,7 @@ router.get('/login', renderlogin)
 router.post('/login', doLogin)
 router.get('/addjob', renderjob)
 router.post('/addjob', doaddjob)
+router.get('/viewjob', companyjobview)
 
 
 module.exports = router;
