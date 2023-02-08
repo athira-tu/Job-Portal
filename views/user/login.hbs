@@ -1,23 +1,24 @@
 <link rel="stylesheet" href="stylesheets/login.css">
-<h1>login</h1>
-<form action="/login" method="post">
-    <label for="">email</label>
-    <input type="email" name="email" required><br>
-    <label for="">password</label>
-    <input type="password" name="password" required><br>
-    <button>login</button>
-</form>
-<form class="login-form" action="/login">
-    <h1>Login</h1>
-    <div class="form-input-material">
-        <input type="email" name="email" id="username" placeholder=" " autocomplete="off" class="form-control-material"
-            required />
-        <label for="username">email</label>
-    </div>
-    <div class="form-input-material">
-        <input type="password" name="password" id="password" placeholder=" " autocomplete="off"
-            class="form-control-material" required />
-        <label for="password">Password</label>
-    </div>
-    <button type="submit" class="btn btn-primary btn-ghost">Login</button>
-</form>
+<div class="login-box">
+    <h1 class="loginhead">User login</h1>
+    <form action="/login" method="post">
+
+        <div class="user-box">
+            <input required="" name="email" type="text">
+            <label>Email</label>
+        </div>
+        <div class="user-box">
+            <input required="" name="password" type="password">
+            <label>Password</label>
+        </div>
+        <a href="#" class="login">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            login
+        </a>
+    </form>
+    <p>Don't have an account? <a href="" class="a2">Sign up!</a></p>
+</div>
+</div>
