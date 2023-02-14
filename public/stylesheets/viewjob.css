@@ -13,15 +13,16 @@ h1 {
 }
 
 .card {
+
     width: 220px;
     height: auto;
     border-radius: 20px;
     background: #f5f5f5;
     position: relative;
-    padding: 1.8rem;
+    /* padding: 1.8rem; */
     border: 2px solid #c3c6ce;
     transition: 0.5s ease-out;
-    overflow: visible;
+    /* overflow: visible; */
 }
 
 .card-details {
@@ -66,6 +67,7 @@ h1 {
 .text-title {
     font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
 }
 
 /*Hover*/
@@ -77,4 +79,12 @@ h1 {
 .card:hover .card-button {
     transform: translate(-50%, 50%);
     opacity: 1;
+}
+
+.maincardcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    /* position: relative; */
 }

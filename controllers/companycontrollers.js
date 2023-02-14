@@ -37,5 +37,15 @@ const doLogin = async function (req, res, next) {
         res.redirect("/company/companylogin")
     }
 }
-
-module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome }
+const updateprofile = function (req, res, next) {
+    res.render('company/updateprofile')
+}
+const doupdate = async function (req, res, next) {
+    if (req.session.employer) {
+        await companymodels.findOneAndUpdate({ email: req.session.employer.email }, req.body)
+        await req.files.image.mv(`./public/company/${req.session.employer._id}.jpg`)
+    } else {
+        res.redirect('/company/login')
+    }
+}
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate }

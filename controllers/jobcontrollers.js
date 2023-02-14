@@ -19,7 +19,18 @@ const doaddjob = async function (req, res, next) {
         res.redirect('/company/login')
     }
 }
-const companyjobview = (req, res, next) => {
-    res.render("company/viewjobs")
+const companyjobview = async (req, res, next) => {
+    if (req.session.employer) {
+        let jobs = await jobmodels.find({ companyid: req.session.employer._id })
+        console.log("jobs", jobs);
+        res.render("company/viewjobs", { jobs })
+
+    } else {
+        res.redirect('/company/login')
+    }
 }
-module.exports = { renderjob, doaddjob, companyjobview }
+const viewalljobs = async function (req, res, next) {
+    let jobs = await jobmodels.find({ status: 'posted' })
+    res.render('user/viewalljobs', { jobs })
+}
+module.exports = { renderjob, doaddjob, companyjobview, viewalljobs }

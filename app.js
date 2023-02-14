@@ -6,6 +6,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 const session = require('express-session');
 const logger = require('morgan')
+const fileupload = require('express-fileupload')
+
 
 var userouter = require('./routes/user');
 var companyrouter = require('./routes/company');
@@ -29,6 +31,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(fileupload())
 
 app.use('/', userouter);
 app.use('/company', companyrouter);

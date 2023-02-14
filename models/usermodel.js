@@ -22,6 +22,35 @@ const userSchemas = new mongoose.Schema({
     workstatus: {
         type: String,
         required: true
+    },
+    about: {
+        type: String,
+
+    },
+    qualification: {
+        type: String,
+
+    },
+    skills: {
+        type: String,
+
+    },
+    experience: {
+        type: String,
+
+    },
+
+    jobcategory: {
+        type: String,
+
+    },
+    language: {
+        type: String,
+
+    },
+    updated: {
+        type: Boolean,
+        default: false
     }
 })
 const usermodel = mongoose.model('user', userSchemas);
