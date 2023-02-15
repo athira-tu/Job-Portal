@@ -21,7 +21,22 @@ const companySchemas = new mongoose.Schema({
     companytype: {
         type: String,
         required: true
+    },
+    about: {
+        type: String,
+
+    },
+    address: {
+        type: String
+    },
+    mission: {
+        type: String
+    },
+    vision: {
+        type: String
     }
+
+
 })
 const companymodels = mongoose.model('companysignup', companySchemas);
 module.exports = companymodels

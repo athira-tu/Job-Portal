@@ -41,11 +41,16 @@ const updateprofile = function (req, res, next) {
     res.render('company/updateprofile')
 }
 const doupdate = async function (req, res, next) {
-    if (req.session.employer) {
-        await companymodels.findOneAndUpdate({ email: req.session.employer.email }, req.body)
-        await req.files.image.mv(`./public/company/${req.session.employer._id}.jpg`)
-    } else {
-        res.redirect('/company/login')
-    }
+    console.log(req.body)
+    await companymodels.findOneAndUpdate({ email: req.session.employer.email }, req.body)
+    await req.files.image.mv(`./public/company/${req.session.employer._id}.jpg`)
+
 }
-module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate }
+
+
+const viewprofile = async function (req, res, next) {
+    const profile = await companymodels.findOne({ email: req.session.employer.email })
+    res.render('company/viewprofile', { profile })
+}
+
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile }

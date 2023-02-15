@@ -1,5 +1,9 @@
+<link rel="stylesheet" href="/stylesheets/viewprofile.css">
 <div>
-    <p>name:{{profile.name}}</p>
+    <div>
+        <img class="image" src="/user/{{profile._id}}.jpg" alt="">
+    </div>
+    <p>name:{{profile.userName}}</p>
     <p>email:{{profile.email}}</p>
     <p>phoneNumber:{{profile.phoneNumber}}</p>
     <p>workstatus:{{profile.workstatus}}</p>
@@ -8,5 +12,5 @@
     <p>skills:{{profile.skills}}</p>
     <p>experience:{{profile.experience}}</p>
     <p>jobcategory:{{profile.jobcategory}}</p>
-    <p>languages:{{profile.languages}}</p>
+    <p>languages:{{profile.language}}</p>
 </div>

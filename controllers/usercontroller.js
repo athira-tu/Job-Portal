@@ -59,26 +59,23 @@ const updateuser = function (req, res, next) {
     res.render('user/updateuser')
 }
 const doupdate = async function (req, res, next) {
-    if (req.session.user) {
-        console.log(req.body);
-        req.body.language = req.body.language.join(" , ")
+
+    console.log(req.body);
+    req.body.language = req.body.language.join(" , ")
 
 
-        await usermodel.findOneAndUpdate({ email: req.session.user.email }, req.body)
-        await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`)
-        await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`)
+    await usermodel.findOneAndUpdate({ email: req.session.user.email }, req.body)
+    await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`)
+    await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`)
 
-    } else {
-        res.redirect('/login')
-    }
+
 }
 const viewprofile = async function (req, res, next) {
-    if (req.session.user) {
-        const profile = await usermodel.findOne({ email: req.session.user.email })
-        res.render('user/viewprofile', { profile })
-    } else {
-        res.redirect('/login')
-    }
+
+    const profile = await usermodel.findOne({ email: req.session.user.email })
+    res.render('user/viewprofile', { profile })
+
+
 
 }
 
