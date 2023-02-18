@@ -1,4 +1,31 @@
 .image {
     width: 100px;
     height: 100px;
+    margin-left: 30%;
+    margin-top: 20px;
+
+}
+
+img {
+    border-radius: 50%;
+}
+
+.maincontainer {
+    width: 200px;
+    height: auto;
+    /* border: 1px solid black; */
+}
+
+.card {
+    width: 250px;
+    /* height: 254px; */
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
+}
+
+.contents {
+    margin-left: 28px;
+    margin-bottom: 20px;
 }

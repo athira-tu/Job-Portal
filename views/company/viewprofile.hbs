@@ -1,10 +1,16 @@
-<div>
-    <p>company name:{{profile.employerName}}</p>
-    <p>email:{{profile.email}}</p>
-    <p>phone Number:{{profile.phoneNumber}}</p>
-    <p>company type:{{profile.companytype}}</p>
-    <p>About:{{profile.about}}</p>
-    <p>address:{{profile.address}}</p>
-    <p>mission:{{profile.mission}}</p>
-    <p>vision:{{profile.vision}}</p>
+<link rel="stylesheet" href="/stylesheets/viewprofile.css">
+<div class="maincontainer card">
+    <div class="">
+        <img class="image" src="/company/{{profile._id}}.jpg" alt="">
+    </div>
+    <div class="contents">
+        <p>company name:{{profile.employerName}}</p>
+        <p>email:{{profile.email}}</p>
+        <p>phone Number:{{profile.phoneNumber}}</p>
+        <p>company type:{{profile.companytype}}</p>
+        <p>About:{{profile.about}}</p>
+        <p>address:{{profile.address}}</p>
+        <p>mission:{{profile.mission}}</p>
+        <p>vision:{{profile.vision}}</p>
+    </div>
 </div>

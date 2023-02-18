@@ -16,8 +16,8 @@ router.post('/addjob', doaddjob)
 router.get('/viewjob', companyjobview)
 router.get('/updateprofile', updateprofile)
 router.post('/updateprofile', companyonly, doupdate)
-router.get('/viewprofile', viewprofile)
-router.post('viewprofile', companyonly, viewprofile)
+router.get('/viewprofile', companyonly, viewprofile)
+router.post('/viewprofile', companyonly, viewprofile)
 
 
 module.exports = router;

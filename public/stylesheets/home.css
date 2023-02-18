@@ -1,0 +1,17 @@
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0%;
+    background-color: red;
+
+}
+
+.collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
