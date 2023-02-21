@@ -98,8 +98,8 @@ const applyjob = async function (req, res, next) {
 }
 
 const viewuserapplication = async function (req, res, next) {
-    const application = await jobapplicationmodel.findOne({ userId: req.session.user._id })
-    res.render('user/viewuserapplication', { application })
+    const applications = await jobapplicationmodel.find({ userId: req.session.user._id })
+    res.render('user/viewuserapplication', { applications })
 }
 
 

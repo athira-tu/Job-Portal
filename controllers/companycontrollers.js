@@ -1,5 +1,7 @@
 const companymodels = require("../models/companymodels")
 const bcrypt = require('bcrypt')
+const jobapplicationmodel = require("../models/jobapplicationmodel")
+const usermodel = require("../models/usermodel")
 
 const rendersignup = function (req, res, next) {
     res.render('company/companysignup')
@@ -53,4 +55,16 @@ const viewprofile = async function (req, res, next) {
     res.render('company/viewprofile', { profile })
 }
 
-module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile }
+const viewcompanyjob = async function (req, res, next) {
+    const jobs = await jobapplicationmodel.find({ companyId: req.session.employer._id })
+    console.log(jobs);
+    res.render('company/viewcompanyjobs', { jobs })
+}
+
+const viewuserprofile = async function (req, res, next) {
+    const userprofile = await usermodel.findOne({ _id: req.params.id })
+    console.log(userprofile);
+    res.render('company/viewuserprofile', { userprofile })
+}
+
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile }
