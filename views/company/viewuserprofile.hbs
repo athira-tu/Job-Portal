@@ -1,4 +1,5 @@
 <p>userprofile</p>
+<img src="/user/{{userprofile._id}}.jpg" alt="">
 <p>name:{{userprofile.userName}}</p>
 <p>email:{{userprofile.email}}</p>
 <p>phoneNumber:{{userprofile.phoneNumber}}</p>
@@ -8,3 +9,6 @@
 <p>skills:{{userprofile.experience}}</p>
 <p>jobcategory:{{userprofile.jobcategory}}</p>
 <p>languages:{{userprofile.language}}</p>
+<a href="/user/resume/{{userprofile._id}}.pdf" target="_blank"> <button>view resume</button></a>
+<a href="/company/acceptprofile/{{}}"></a><button>accept</button>
+<button>reject</button>

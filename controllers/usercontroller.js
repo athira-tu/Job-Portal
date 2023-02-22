@@ -67,7 +67,7 @@ const doupdate = async function (req, res, next) {
 
     await usermodel.findOneAndUpdate({ email: req.session.user.email }, req.body)
     await req.files.image.mv(`./public/user/${req.session.user._id}.jpg`)
-    await req.files.resume.mv(`./public/resume/${req.session.user._id}.pdf`)
+    await req.files.resume.mv(`./public/user/resume/${req.session.user._id}.pdf`)
 
 
 }

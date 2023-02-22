@@ -2,7 +2,25 @@
 <p>name:{{userName}}</p>
 <p>job title:{{jobTitle}}</p>
 <p>status:{{status}}</p>
-<button>accept</button>
-<button>reject</button>
-<a href="/company/viewuserprofiles/{{userId}}"><button>viewuserprofile</button></a>
+
+<a href="/company/viewuserprofiles/{{_id}}"><button>viewuserprofile</button></a>
+<a href="/company/acceptprofile/{{_id}}"><button>accept</button></a>
+<a href="/company/rejectprofile/{{_id}}"><button>reject</button></a>
 {{/each}}
+
+
+{{!-- <div class=" card">
+    <div class="tools">
+        <div class="circle">
+            <span class="red box"></span>
+        </div>
+        <div class="circle">
+            <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+            <span class="green box"></span>
+        </div>
+    </div>
+    <div class="card__content">
+    </div>
+</div> --}}

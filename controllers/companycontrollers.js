@@ -67,4 +67,14 @@ const viewuserprofile = async function (req, res, next) {
     res.render('company/viewuserprofile', { userprofile })
 }
 
-module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile }
+const acceptprofile = async function (req, res, next) {
+    const accept = await jobapplicationmodel.findOneAndUpdate({ _id: req.params.id }, { status: "accepted" })
+    console.log(accept);
+    res.redirect('/company/viewcompanyjobs')
+}
+const rejectprofile = async function (req, res, next) {
+    const reject = await jobapplicationmodel.findOneAndUpdate({ _id: req.params.id }, { status: "rejected" })
+    res.redirect('/company/viewcompanyjobs')
+}
+
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile }
