@@ -36,7 +36,7 @@ const doLogin = async function (req, res, next) {
 
 
     } else {
-        res.redirect("/company/companylogin")
+        res.redirect("/company/login")
     }
 }
 const updateprofile = function (req, res, next) {
@@ -57,7 +57,11 @@ const viewprofile = async function (req, res, next) {
 
 const viewcompanyjob = async function (req, res, next) {
     const jobs = await jobapplicationmodel.find({ companyId: req.session.employer._id })
-    console.log(jobs);
+    // console.log(jobs);
+    let appliedjob = jobs.filter((x) => x.status == "applied")
+    let acceptedjob = jobs.filter((x) => x.status == "accepted")
+    let rejectedjob = jobs.filter((x) => x.status == "rejected")
+    console.log(acceptedjob)
     res.render('company/viewcompanyjobs', { jobs })
 }
 

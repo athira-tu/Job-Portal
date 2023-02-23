@@ -1,0 +1,75 @@
+body {
+    background-image: url(../images/ben-white-mO9vKbG5csg-unsplash.jpg);
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+
+}
+
+.wrapper {
+    width: 100%;
+    z-index: 10;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(284, 82%, 18%);
+    padding: 1rem 1.5rem;
+    border-radius: 0.4rem;
+    /* padding-left: 40px;
+    padding-right: 60px; */
+    /* position: fixed; */
+}
+
+nav.logo {
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav #toggle,
+nav label {
+    display: none;
+}
+
+@media(max-width:40.625em) {
+    nav.menu {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 0;
+    }
+
+    nav label {
+        display: inline-block;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav #toggle:checked~.menu {
+        height: 100%;
+    }
+}

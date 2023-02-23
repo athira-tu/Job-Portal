@@ -1,12 +1,17 @@
+body {
+    background-image: url(../images/ben-white-mO9vKbG5csg-unsplash.jpg);
+    background-size: cover;
+}
+
 .login-box {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 24%;
     width: 400px;
     padding: 40px;
     margin: 20px auto;
     transform: translate(-50%, -55%);
-    background: rgba(0, 0, 0, .9);
+    /* background: rgb(124, 119, 119); */
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
     border-radius: 10px;
@@ -193,4 +198,44 @@
 
 .companylogin {
     margin-left: 35%;
+}
+
+.btn {
+    width: 4.5em;
+    height: 1.9em;
+    margin: 0.5em;
+    /* background: black; */
+    color: grey;
+    border: none;
+    border-radius: 0.625em;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin-left: 32%;
+}
+
+button:hover {
+    color: black;
+}
+
+button:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+button:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
 }
