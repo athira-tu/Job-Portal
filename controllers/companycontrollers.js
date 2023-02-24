@@ -46,6 +46,7 @@ const doupdate = async function (req, res, next) {
     console.log(req.body)
     await companymodels.findOneAndUpdate({ email: req.session.employer.email }, req.body)
     await req.files.image.mv(`./public/company/${req.session.employer._id}.jpg`)
+    res.redirect('/company/viewprofile')
 
 }
 
@@ -62,7 +63,7 @@ const viewcompanyjob = async function (req, res, next) {
     let acceptedjob = jobs.filter((x) => x.status == "accepted")
     let rejectedjob = jobs.filter((x) => x.status == "rejected")
     console.log(acceptedjob)
-    res.render('company/viewcompanyjobs', { jobs })
+    res.render('company/viewcompanyjobs', { jobs, appliedjob, acceptedjob, rejectedjob })
 }
 
 const viewuserprofile = async function (req, res, next) {

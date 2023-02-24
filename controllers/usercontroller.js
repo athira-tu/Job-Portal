@@ -102,7 +102,9 @@ const viewuserapplication = async function (req, res, next) {
     res.render('user/viewuserapplication', { applications })
 }
 
-
+// const dologout=async function (req, res, next){
+//     const logout=await usermodel.
+// }
 
 
 
