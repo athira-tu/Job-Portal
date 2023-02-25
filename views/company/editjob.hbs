@@ -1,0 +1,26 @@
+<h1>editjob</h1>
+<form action="/company/viewjobs" method="post">
+    <label for="">title</label>
+    <input type="text" name="title" value="{{job.title}}"><br><br>
+    <label for="">description</label>
+    <textarea id="" cols="30" rows="10" name="description">{{job.description}}</textarea><br><br>
+    <label for="">qualification</label>
+    <input type="text" name="qualification" value="{{job.qualification}}"><br><br>
+    <label for="">vaccancy</label>
+    <input type="number" name="vaccancy" value="{{job.vaccancy}}"><br><br>
+    <label for="">salary</label>
+    <input type="number" name="salary" value="{{job.salary}}"><br><br>
+    <label for="">experience</label>
+    <input type="text" name="experience" value="{{job.experience}}"><br><br>
+
+    <label for="">lastdate</label>
+    <input type="text" name="lastdate" value="{{job.lastdate}}"><br><br>
+    <label for="">jobtype</label>
+    <select class="form-select" aria-label="Default select example" name="jobtype">
+        <option selected>job type</option>
+        <option value="1">remote</option>
+        <option value="2">partime</option>
+        <option value="3">fulltime</option>
+    </select>
+    <button type="submit">submit</button>
+</form>

@@ -82,4 +82,10 @@ const rejectprofile = async function (req, res, next) {
     res.redirect('/company/viewcompanyjobs')
 }
 
-module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile }
+const doLogout = async function (req, res, next) {
+    delete req.session.employer
+    res.redirect('/company/login')
+}
+
+
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile, doLogout }

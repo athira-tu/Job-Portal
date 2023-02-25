@@ -33,4 +33,18 @@ const viewalljobs = async function (req, res, next) {
     let jobs = await jobmodels.find({ status: 'posted' })
     res.render('user/viewalljobs', { jobs })
 }
-module.exports = { renderjob, doaddjob, companyjobview, viewalljobs }
+const deletejob = async function (req, res, next) {
+    await jobmodels.findOneAndDelete({ companyid: req.session.employer._id })
+    res.redirect('/company/viewjobs')
+}
+const edit = async function (req, res, next) {
+    const job = await jobmodels.findOne({ _id: req.params.id })
+    res.render('company/editjob', { job })
+
+
+}
+const editjob = async function (req, res, next) {
+    await jobmodels.findOneAndUpdate({ _id: req.params.id }, req.body)
+    res.redirect('/company/viewjobs')
+}
+module.exports = { renderjob, doaddjob, companyjobview, viewalljobs, deletejob, edit, editjob }
