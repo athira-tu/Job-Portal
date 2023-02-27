@@ -1,5 +1,5 @@
 var express = require('express');
-const { rendersignup, dosignup, renderlogin, renderhome, doLogin, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile, doLogout } = require('../controllers/companycontrollers');
+const { rendersignup, dosignup, renderlogin, renderhome, doLogin, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile, doLogout, vieweditcompanyprofile, doeditcompanyprofile } = require('../controllers/companycontrollers');
 const { renderjob, doaddjob, companyjobview, deletejob, edit, editjob } = require('../controllers/jobcontrollers');
 const companyonly = require('../middleware/companyonly');
 
@@ -26,4 +26,6 @@ router.get('/logout', doLogout)
 router.get('/delete/:id', companyonly, deletejob)
 router.get('/editjob/:id', companyonly, edit)
 router.post('/editjob/:id', companyonly, editjob)
+router.get('/editcompanyprofile', companyonly, vieweditcompanyprofile)
+router.post('/editcompanyprofile', companyonly, doeditcompanyprofile)
 module.exports = router;

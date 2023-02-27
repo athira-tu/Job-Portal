@@ -107,6 +107,14 @@ const dologout = async function (req, res, next) {
     res.redirect('/login')
 }
 
+const vieweditprofile = async function (req, res, next) {
+    const editprofile = await usermodel.findOne({ email: req.session.user.email })
+    res.render('user/editprofile', { editprofile })
+}
 
+const doedit = async function (req, res, next) {
+    const edit = await usermodel.findOneAndUpdate({ email: req.session.user.email }, req.body)
+    res.redirect('/viewprofile')
+}
 
-module.exports = { renderindexpage, renderlogin, renderhome, rendersignup, dosignup, doLogin, updateuser, doupdate, viewprofile, applyjob, viewuserapplication, dologout }
+module.exports = { renderindexpage, renderlogin, renderhome, rendersignup, dosignup, doLogin, updateuser, doupdate, viewprofile, applyjob, viewuserapplication, dologout, vieweditprofile, doedit }

@@ -1,0 +1,68 @@
+<div>
+    <h1>edit profile</h1>
+    <form action="/editprofile" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <th> <label for="">name</label></th>
+                <th><input type="text" name="userName" id="" required value="{{editprofile.userName}}"></th><br><br>
+            </tr>
+            <tr>
+                <th><label for="">email</label></th>
+                <th> <input type="email" name="email" id="" required value="{{editprofile.email}}"><br><br></th>
+            </tr>
+            <tr>
+                <th><label for="">phone number</label></th>
+                <th><input type="number" name="phoneNumber" id="" required value="{{editprofile.phoneNumber}}"><br><br>
+                </th>
+            </tr>
+
+        </table>
+        <label for="">work status</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="workstatus" id="flexRadioDefault1" value="fresher">
+            <label class="form-check-label" for="flexRadioDefault1">
+                fresher
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="workstatus" id="flexRadioDefault2" value="working"
+                checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+                working
+            </label>
+        </div>
+
+        <label for="">about:</label>
+        <textarea name="about" id="" cols="30" rows="10">{{editprofile.about}}</textarea><br><br>
+        <label for="">qualification:</label>
+        <textarea name="qualification" id="" cols="30" rows="10">{{editprofile.qualification}}</textarea><br><br>
+        <label for="">skills:</label>
+        <textarea name="skills" id="" cols="30" rows="10">{{editprofile.skills}}</textarea><br><br>
+        <label for="">experience:</label>
+        <textarea name="experience" id="" cols="30" rows="10">{{editprofile.experience}}</textarea><br><br>
+        <label for="">image</label>
+        <input type="file" name="image" accept=".jpg"><br><br>
+        <label for="">resume:</label>
+        <input type="file" name="resume" accept=".pdf"><br><br>
+        <label for="">job category:</label>
+        <select name="jobcategory">
+            <option selected>select job category</option>
+            <option value="software">software</option>
+            <option value="architecture">architecture</option>
+            <option value="finance">finance</option>
+            <option value="marketing">marketing</option>
+        </select>
+        <label for="">language</label>
+
+        <input type="checkbox" name="language" value="english">
+        <label for="english">english</label><br>
+        <input type="checkbox" name="language" value="malayalam">
+        <label for="malayalam"> malayalam</label><br>
+        <input type="checkbox" name="language" value="hindi">
+        <label for="hindi">hindi</label>
+        <button type="submit">submit</button>
+
+
+
+    </form>
+</div>

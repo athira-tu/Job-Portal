@@ -1,0 +1,42 @@
+<div>
+    <h1>edit</h1>
+    <form action="/company/editcompanyprofile" method="post">
+        <table>
+            <tr>
+                <th> <label for="">employer name</label></th>
+                <th><input type="text" name="employerName" id="" value="{{edit.employerName}}"></th><br><br>
+            </tr>
+            <tr>
+                <th><label for="">email</label></th>
+                <th> <input type="email" name="email" id="" value="{{edit.email}}"><br><br></th>
+            </tr>
+            <tr>
+                <th><label for="">phone number</label></th>
+                <th><input type="number" name="phoneNumber" id="" value="{{edit.phoneNumber}}"><br><br></th>
+            </tr>
+
+            <tr>
+                <th><label for="">employer type</label></th>
+                <select name="companytype" class="form-select" aria-label="Default select example">
+                    <option selected>select company type</option>
+                    <option value="software">software</option>
+                    <option value="architecture">architecture</option>
+                    <option value="finance">finance</option>
+                    <option value="marketing">marketing</option>
+                </select>
+            </tr>
+        </table>
+        <label for="">image:</label>
+        <input type="file" name="image" accept=".jpg"><br><br>
+        <label for="">about:</label>
+        <textarea name="about" id="" cols="30" rows="10">{{edit.about}}</textarea><br><br>
+        <label for="">address:</label>
+        <textarea name="address" id="" cols="30" rows="10">{{edit.address}}</textarea><br><br>
+        <label for="">mission:</label>
+        <textarea name="mission" id="" cols="30" rows="10">{{edit.mission}}</textarea><br><br>
+        <label for="">vision:</label>
+        <textarea name="vision" id="" cols="30" rows="10">{{edit.vision}}</textarea><br><br>
+
+
+        <button>submit</button>
+    </form>

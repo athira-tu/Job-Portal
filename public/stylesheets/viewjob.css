@@ -1,120 +1,39 @@
-/* .card {
-    position: relative;
-    left: 2em;
-    width: 12.5em;
-    height: 6.5em;
-    background: white;
-    transition: .4s ease-in-out;
-    border-radius: 15px;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+.card {
+    width: 190px;
+    height: 254px;
+    margin: 0 auto;
+    background-color: #F8FBFE;
+    border-radius: 8px;
+    z-index: 1;
 }
 
-.heading {
-    position: relative;
-    color: black;
-    font-weight: bold;
-    font-size: 1.1em;
-    padding-top: 1em;
-    padding-left: 1em;
-    transition: .4s ease-in-out;
+.tools {
+    display: flex;
+    align-items: center;
+    padding: 9px;
 }
 
-.details {
-    position: relative;
-    color: black;
-    font-size: 0.6em;
-    padding-top: 1.5em;
-    padding-left: 2em;
-    transition: .4s ease-in-out;
+.circle {
+    padding: 0 4px;
 }
 
-.price {
-    position: relative;
-    color: black;
-    font-weight: bold;
-    font-size: 0.8em;
-    padding-top: 1.5em;
-    padding-left: 1.5em;
-    top: 9.6em;
-    left: 5em;
-    transition: .4s ease-in-out;
+.box {
+    display: inline-block;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+    padding: 1px;
+    border-radius: 50%;
 }
 
-.btn1 {
-    position: relative;
-    border: none;
-    outline: none;
-    background-color: black;
-    color: white;
-    font-size: 0.6em;
-    padding-left: 6.9em;
-    padding-right: 6.9em;
-    padding-top: 0.8em;
-    padding-bottom: 0.85em;
-    border-radius: 10px;
-    left: 2.6em;
-    top: 14.8em;
-    transition: .4s ease-in-out;
-    font-weight: bold;
-    visibility: hidden;
+.red {
+    background-color: #ff605c;
 }
 
-.btn1:hover {
-    background-color: rgb(43, 168, 43);
-    visibility: visible;
+.yellow {
+    background-color: #ffbd44;
 }
 
-.btn2 {
-    position: relative;
-    border: none;
-    outline: none;
-    background-color: black;
-    color: white;
-    font-size: 0.6em;
-    padding-left: 5.1em;
-    padding-right: 5.1em;
-    padding-top: 0.8em;
-    padding-bottom: 0.85em;
-    border-radius: 10px;
-    left: 2.6em;
-    top: 15.5em;
-    transition: .4s ease-in-out;
-    font-weight: bold;
+.green {
+    background-color: #00ca4e;
 }
-
-.btn2:hover {
-    background-color: rgb(43, 168, 43);
-}
-
-.glasses {
-    position: relative;
-    top: 0em;
-    left: -0.8em;
-    width: 70px;
-    height: 70px;
-    transition: .4s ease-in-out;
-}
-
-.card:hover {
-    width: 12.5em;
-    height: 21.7em;
-    left: 3.3em;
-}
-
-.card:hover+.btn1 {}
-
-.card:hover+.glasses {
-    transform: rotateX(360deg);
-    height: 100px;
-    width: 100px;
-    left: -6.2em;
-    top: -6.5em;
-}
-
-.card:hover .heading {
-    transform: translateY(7em) translateX(2.3em);
-}
-
-.card:hover .details {
-    transform: translateY(13em) translateX(3.5em);
-} */

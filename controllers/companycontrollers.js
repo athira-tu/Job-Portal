@@ -87,5 +87,15 @@ const doLogout = async function (req, res, next) {
     res.redirect('/company/login')
 }
 
+const vieweditcompanyprofile = async function (req, res, next) {
+    const edit = await companymodels.findOne({ email: req.session.employer.email })
+    res.render('company/editcompanyprofile', { edit })
+}
 
-module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile, doLogout }
+const doeditcompanyprofile = async function (req, res, next) {
+    await companymodels.findOneAndUpdate({ email: req.session.employer.email }, req.body)
+    res.redirect('/company/viewprofile')
+}
+
+
+module.exports = { rendersignup, dosignup, renderlogin, doLogin, renderhome, updateprofile, doupdate, viewprofile, viewcompanyjob, viewuserprofile, acceptprofile, rejectprofile, doLogout, vieweditcompanyprofile, doeditcompanyprofile }

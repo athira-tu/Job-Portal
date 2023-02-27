@@ -24,3 +24,39 @@
     {{/each}}
 
 </div>
+
+
+
+<div class="card">
+    <div class="tools">
+        <div class="circle">
+            <span class="red box"></span>
+        </div>
+        <div class="circle">
+            <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+            <span class="green box"></span>
+        </div>
+    </div>
+    <div class="card__content">
+        <div>
+            <p class="text-title title">{{title}}</p>
+            <p class="text-body">qualification:{{qualification}}</p>
+            <p class="text-body">vaccancy:{{vaccancy}}</p>
+            <p class="text-body">salary:{{salary}}</p>
+            <p class="text-body">experience:{{experience}}</p>
+            <p class="text-body">jobtype:{{jobtype}}</p>
+            <p class="text-body">lastdate:{{lastdate}}</p>
+            <p class="text-body">dateposted:{{dateposted}}</p>
+            <p class="text-body">status:{{status}}</p>
+        </div>
+        <div class="buttons">
+            <div class="button">
+                <a href="/company/delete/{{_id}}"> <button>delete</button></a>
+                <a href="/company/editjob/{{_id}}"> <button>edit</button></a>
+
+            </div>
+
+        </div>
+    </div>
